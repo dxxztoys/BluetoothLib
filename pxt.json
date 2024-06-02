@@ -10,8 +10,6 @@
     "files": [
         "README.md",
         "main.ts",
-        "BTRemote-strings.json",
-        "BTRemote-jsdoc-strings.json",
         "_locales/zh-cn/BTRemote-strings.json",
         "_locales/zh-cn/BTRemote-jsdoc-strings.json"
     ],
