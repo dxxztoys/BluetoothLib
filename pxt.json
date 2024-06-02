@@ -9,12 +9,11 @@
     },
     "files": [
         "README.md",
-        "BluetoothLib.ts",
-        "BluetoothLib-strings.json",
-        "BluetoothLib-jsdoc-strings.json",
-        "_locales/zh-cn/BluetoothLib-strings.json",
-        "_locales/zh-cn/BluetoothLib-jsdoc-strings.json",
-        "_locales/zh-tw/BluetoothLib-strings.json"
+        "main.ts",
+        "BTRemote-strings.json",
+        "BTRemote-jsdoc-strings.json",
+        "_locales/zh-cn/BTRemote-strings.json",
+        "_locales/zh-cn/BTRemote-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
