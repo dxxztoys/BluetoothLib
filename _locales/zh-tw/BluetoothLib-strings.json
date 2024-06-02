@@ -1,0 +1,7 @@
+{
+  "Servo_16C|block": "16路舵機驅動",
+  "{id:category}Servo_16C": "16路舵機驅動",
+  "Servo_16C.initServo16Channel|block": "初始化16路舵機驅動串口引脚 RX|%txpin|TX|%rxpin",
+  "Servo_16C.uartServo16Channel|block": "通過串口設定舵機|%sevornum|角度為|%angle",
+  "Servo_16C.iicServo16Channel|block": "通過IIC設定舵機|%sevornum|角度為|%angle"
+}
