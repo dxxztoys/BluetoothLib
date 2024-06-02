@@ -10,7 +10,9 @@
     },
     "files": [
         "README.md",
-        "BluetoothLib.ts"
+        "BluetoothLib.ts",
+        "_locales/zh-cn/BluetoothLib-strings.json",
+        "_locales/zh-tw/BluetoothLib-strings.json"
     ],
     "testFiles": [
         "test.ts"
