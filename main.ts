@@ -4,7 +4,7 @@ modified from LZD
 */
 
 //% color=#ec924d weight=25 icon="\uf09e"
-namespace BluetoothLib {
+namespace BTRemote {
 
     export enum GetKey {
         //% blockId="LeftForward" block="LeftForward"
