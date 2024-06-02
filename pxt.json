@@ -1,7 +1,8 @@
 {
     "name": "bluetoothlib",
-    "version": "0.0.0",
-    "description": "",
+    "version": "0.0.1",
+    "description": "Extension for dxxztoys bluetooth",
+    "license": "MIT",
     "dependencies": {
         "core": "*",
         "radio": "*",
@@ -9,19 +10,18 @@
     },
     "files": [
         "README.md",
-        "main.blocks",
-        "main.ts"
+        "BluetoothLib.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
-    "public": true,
+    "public": false,
     "targetVersions": {
-        "target": "6.0.27",
+        "target": "6.0.28",
         "targetId": "microbit"
     },
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
