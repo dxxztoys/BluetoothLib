@@ -60,7 +60,7 @@ namespace BluetoothLib {
     }
 
     //% blockId= BTRemoteControl_init block="Bluetooth Remote Control Uart Init at pin RX| %txpin TX| %rxpin"
-    //% weight=20
+    //% weight=25
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function initBluetoothLib(txpin: SerialPin, rxpin: SerialPin): void {
         serial.redirect(
@@ -73,7 +73,7 @@ namespace BluetoothLib {
     let ReBTdata = 0
     //% blockId= BTRemoteControl_data block="Receive Remote Control Data"
     //% weight=20
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=18
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function dataBluetoothLib(): void {
         let cmd_BTdata: Buffer = null
         let BTdata = [0]
@@ -91,23 +91,23 @@ namespace BluetoothLib {
     //% blockId= BluetoothCar_uart block="Control Car| %keynum | %state "
     //% weight=15
     //% angle.min=0 angle.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=15
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function uartBluetoothCar(keynum: GetKey, state: GetKeyState): boolean {
         return ReBTdata == (100 + keynum * 10 + state)
     }
 
     //% blockId= BluetoothMotor_uart block="Control Motor| %motorkeynum | %motorstate "
-    //% weight=15
+    //% weight=10
     //% angle.min=0 angle.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=10
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function uartBluetoothMotor(motorkeynum: GetMotorKey, motorstate: GetMotorState): boolean {
         return ReBTdata == (200 + motorkeynum * 10 + motorstate)
     }
 
     //% blockId= BluetoothButton_uart block="Control Button| %buttonkeynum | %buttonstate "
-    //% weight=15
+    //% weight=5
     //% angle.min=0 angle.max=180
-    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=5
+    //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function uartBluetoothButton(buttonkeynum: GetButtonKey, buttonstate: GetButtonState): boolean {
         return ReBTdata == (300 + buttonkeynum * 10 + buttonstate)
     }
