@@ -1,3 +1,7 @@
+/*
+Copyright (C): 2010-2019, DXXZ Tech
+modified from LZD
+*/
 
 //% color=#ec924d weight=25 icon="\uf09e"
 namespace BluetoothLib {
