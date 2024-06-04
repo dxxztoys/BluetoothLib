@@ -4,66 +4,67 @@ modified from LZD
 */
 
 //% color=#ec924d weight=25 icon="\uf09e"
+//% blockId="BTRemote" block="蓝牙遥控器"
 namespace BTRemote {
 
     export enum GetKey {
-        //% blockId="LeftForward" block="LeftForward"
+        //% blockId="LeftForward" block="左前进"
         LeftForward = 1,
-        //% blockId="LeftBackward" block="LeftBackward"
+        //% blockId="LeftBackward" block="左后退"
         LeftBackward = 2,
-        //% blockId="RightForward" block="RightForward"
+        //% blockId="RightForward" block="右前进"
         RightForward = 3,
-        //% blockId="RightBackward" block="RightBackward"
+        //% blockId="RightBackward" block="右后退"
         RightBackward = 4,
-        //% blockId="LeftRotation" block="LeftRotation"
+        //% blockId="LeftRotation" block="左旋"
         LeftRotation = 5,
-        //% blockId="RightRotation" block="RightRotation"
+        //% blockId="RightRotation" block="右旋"
         RightRotation = 6,
-        //% blockId="LeftTranslation" block="LeftTranslation"
+        //% blockId="LeftTranslation" block="左平移"
         LeftTranslation = 7,
-        //% blockId="RightTranslation" block="RightTranslation"
+        //% blockId="RightTranslation" block="右平移"
         RightTranslation = 8
     }
     export enum GetKeyState {
-        //% blockId="Press" block="Press"
+        //% blockId="Press" block="按下"
         Press = 1,
-        //% blockId="Release" block="Release"
+        //% blockId="Release" block="松开"
         Release = 0
     }
     export enum GetMotorKey {
-        //% blockId="Motor1" block="Motor1"
+        //% blockId="Motor1" block="电机1"
         Motor1 = 1,
-        //% blockId="Motor2" block="Motor2"
+        //% blockId="Motor2" block="电机2"
         Motor2 = 2,
-        //% blockId="Motor3" block="Motor3"
+        //% blockId="Motor3" block="电机3"
         Motor3 = 3,
-        //% blockId="Motor4" block="Motor4"
+        //% blockId="Motor4" block="电机4"
         Motor4 = 4
     }
     export enum GetMotorState {
-        //% blockId="Stop" block="Stop"
+        //% blockId="Stop" block="松开"
         Stop = 0,
-        //% blockId="Forward" block="Forward"
+        //% blockId="Forward" block="正转"
         Forward = 1,
-        //% blockId="Backward" block="Backward"
+        //% blockId="Backward" block="反转"
         Backward = 2
     }
     export enum GetButtonKey {
-        //% blockId="Button1" block="Button1"
+        //% blockId="Button1" block="按键1"
         Button1 = 1,
-        //% blockId="Button2" block="Button2"
+        //% blockId="Button2" block="按键2"
         Button2 = 2,
-        //% blockId="Button3" block="Button3"
+        //% blockId="Button3" block="按键3"
         Button3 = 3
     }
     export enum GetButtonState {
-        //% blockId="Press" block="Press"
+        //% blockId="Press" block="按下"
         Press = 1,
-        //% blockId="Release" block="Release"
+        //% blockId="Release" block="松开"
         Release = 0
     }
 
-    //% blockId= BTRemoteControl_init block="Bluetooth Remote Control Uart Init at pin RX| %txpin TX| %rxpin"
+    //% blockId= BTRemoteControl_init block="初始化蓝牙遥控器引脚RX | %txpin | TX | %rxpin "
     //% weight=25
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function initBluetoothLib(txpin: SerialPin, rxpin: SerialPin): void {
@@ -75,7 +76,7 @@ namespace BTRemote {
         basic.pause(1000)
     }
     let ReBTdata = 0
-    //% blockId= BTRemoteControl_data block="Receive Remote Control Data"
+    //% blockId= BTRemoteControl_data block="接收遥控器数据"
     //% weight=20
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
     export function dataBluetoothLib(): void {
@@ -92,7 +93,7 @@ namespace BTRemote {
         }
     }
 
-    //% blockId= BluetoothCar_uart block="Control Car| %keynum | %state "
+    //% blockId= BluetoothCar_uart block="小车| %keynum | %state "
     //% weight=15
     //% angle.min=0 angle.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
@@ -100,7 +101,7 @@ namespace BTRemote {
         return ReBTdata == (100 + keynum * 10 + state)
     }
 
-    //% blockId= BluetoothMotor_uart block="Control Motor| %motorkeynum | %motorstate "
+    //% blockId= BluetoothMotor_uart block="电机| %motorkeynum | %motorstate "
     //% weight=10
     //% angle.min=0 angle.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
@@ -108,7 +109,7 @@ namespace BTRemote {
         return ReBTdata == (200 + motorkeynum * 10 + motorstate)
     }
 
-    //% blockId= BluetoothButton_uart block="Control Button| %buttonkeynum | %buttonstate "
+    //% blockId= BluetoothButton_uart block="按键| %buttonkeynum | %buttonstate "
     //% weight=5
     //% angle.min=0 angle.max=180
     //% name.fieldEditor="gridpicker" name.fieldOptions.columns=20
